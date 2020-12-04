@@ -60,8 +60,10 @@ steps:
     projects: '**/*.Tests.csproj'
 
 - task: WhiteSource Bolt@20
+  displayName: 'WhiteSource Scan'
   inputs:
-    cwd: '- task: WhiteSource Bolt@20   inputs:     cwd: ''$(wwwrootDir)'''
+    cwd: $(wwwrootDir)
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: dist'
   condition: succeeded()
